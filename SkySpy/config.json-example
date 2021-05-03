@@ -4,5 +4,28 @@
   "INFLUXDB_ADDRESS" : "influxdb",
   "INFLUXDB_USER" : "root",
   "INFLUXDB_PASSWORD" : "root",
-  "INFLUXDB_DATABASE" : "home_db"
+  "INFLUXDB_DATABASE" : "home_db",
+  "CATEGORY_PREFIXES" : {
+  	"ctIFC" : "Furnace",
+	"ctOutdoor" : "Heat Pump",
+	"sched" : "Schedule",
+	"aqIndoor" : "Indoor Air Quality",
+	"aqOutdoor" : "Outdoor Air Quality",
+	"adr" : "Utility Demand Response",
+	"alert" : "Alerts",
+	"message" : "Messages",
+	"fault" : "Faults",
+	"sysFault" : "Faults",
+	"ctEEVCoil" : "EEV Coil",
+	"ctAH" : "Aux Heat",
+	"oneClean" : "One Clean",
+	"P1P2" : "P1P2 Mini Split",
+	"S21" : "S21 Mini Split"
+  },
+  "IGNORED_PREFIXES" : [
+	"aqIndoor",
+	"adr",
+	"P1P2",
+	"S21"
+  ]
 }

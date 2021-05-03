@@ -1,0 +1,28 @@
+services:
+  influxdb:
+    image: influxdb:latest
+    container_name: influxdb
+    ports:
+      - 8086:8086
+    volumes:
+      - ${DATA_DIR}/influxdb:/var/lib/influxdb
+    restart: always
+
+  grafana:
+    image: grafana/grafana:6.7.3
+    container_name: grafana
+    depends_on:
+      - influxdb
+    ports:
+      - 3000:3000
+    volumes:
+      - ${DATA_DIR}/grafana:/var/lib/grafana
+    restart: always
+
+  skyspy:
+    build: ./SkySpy
+    image: tjcoffey/skyspy
+    container_name: skyspy
+    depends_on:
+      - influxdb
+    restart: always
