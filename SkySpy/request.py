@@ -31,7 +31,7 @@ def _init_influxdb_database():
     databases = influxdb_client.get_list_database()
     if len(list(filter(lambda x: x['name'] == config['INFLUXDB_DATABASE'], databases))) == 0:
         influxdb_client.create_database(config['INFLUXDB_DATABASE'])
-    influxdb_client.switch_database(INFLUXDB_DATABASE)
+    influxdb_client.switch_database(config['INFLUXDB_DATABASE'])
 
 def getCategory(param):
 	for category in categoryRegExes:
